@@ -23,7 +23,7 @@ namespace POC.API.IntegrationTests.Http.Clients
 
         public async Task<HttpResponseMessage> RetrieveSubscriberById(CancellationToken cancellationToken)
         {
-            var response = await GetClient().GetAsync(Option.GetSubscriberByIdEndpoint, cancellationToken);
+            var response = await GetClient().GetAsync(Option.GetSubscriberById, cancellationToken);
             return response;
         }
         public override HttpClient GetClient()

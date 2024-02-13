@@ -11,6 +11,7 @@ namespace POC.API.IntegrationTests.Http.Clients
         public static class Endpoints
         {
             public const string Poc = "Endpoints:Poc";
+            public const string OAuth = "Endpoints:OAuth";
         }
     }
 }
