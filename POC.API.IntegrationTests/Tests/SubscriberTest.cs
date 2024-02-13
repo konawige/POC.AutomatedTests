@@ -9,7 +9,8 @@ namespace POC.API.IntegrationTests.Tests
         [Test]
         public void Test1()
         {
-           var response = PocHttpClient!.RetrieveSubscriberById(CancellationToken.None).Result;
+           //var response = PocHttpClient!.RetrieveSubscriberById(CancellationToken.None).Result;
+           var response = OauthHttpClient!.ObtainToken(CancellationToken.None).Result;
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
         }
     }

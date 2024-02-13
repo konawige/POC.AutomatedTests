@@ -28,15 +28,23 @@ namespace POC.API.IntegrationTests
                 .AddUserSecrets<TestsSetUpBase>()
                 .AddEnvironmentVariables();
 
-            builder.Services.AddHttpClient();
+            builder.Services.Configure<OauthParamValue>(
+                builder.Configuration.GetSection(OauthParamValue.OauthParam));
 
+            builder.Services.Configure<OauthCredentialValue>(
+                builder.Configuration.GetSection(OauthCredentialValue.OauthCredential));
+
+            builder.Services.AddHttpClient();
             builder.Services.ConfigureClients(ConfigurationConstants.Endpoints.Poc);
+            builder.Services.ConfigureClients(ConfigurationConstants.Endpoints.OAuth);
+            builder.Services.ScanAndRegisterHttpClients();
 
             var host = builder.Build();
 
-            PocHttpClient = host?.Services.GetRequiredService<IPocHttpClient>();
+            OauthHttpClient = host?.Services.GetRequiredService<IOauthHttpClient>();
 
         }
         protected IPocHttpClient? PocHttpClient { get;  set; }
+        protected IOauthHttpClient? OauthHttpClient { get;  set; }
     }
 }

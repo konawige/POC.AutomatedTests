@@ -10,12 +10,12 @@ namespace POC.API.IntegrationTests.Http
         {
            services.AddOptions<EndpointsOption>(endPoint)
                 .BindConfiguration(endPoint);
-            services.ScanAndRegisterHttpClients();
+            //services.ScanAndRegisterHttpClients();
 
             return services;
         }
         // 
-        private static IServiceCollection ScanAndRegisterHttpClients(this IServiceCollection services)
+        public static IServiceCollection ScanAndRegisterHttpClients(this IServiceCollection services)
         {
             
             services.Scan(scan => scan

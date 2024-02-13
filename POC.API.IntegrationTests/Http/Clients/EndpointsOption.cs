@@ -11,6 +11,12 @@ namespace POC.API.IntegrationTests.Http.Clients
     {
         [Required]
         public Uri? BaseUrl { get; set; }
-        public string? GetSubscriberByIdEndpoint { get; set; }
+        /* POC */
+        public string? GetSubscriberById { get; set; }
+        /* POC */
+
+        /* OAUTH */
+        public string? ObtainToken { get; set; }
+        /* OAUTH */
     }
 }
