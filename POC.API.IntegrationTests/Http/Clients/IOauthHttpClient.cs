@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POC.API.IntegrationTests.Models.Responses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace POC.API.IntegrationTests.Http.Clients
 {
     public interface IOauthHttpClient: IHttpClient
     {
-        Task<HttpResponseMessage> ObtainToken(CancellationToken cancellationToken);
+        Task<TokenResponse> ObtainToken(CancellationToken cancellationToken);
     }
 }

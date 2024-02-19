@@ -13,6 +13,7 @@ namespace POC.API.IntegrationTests.Http.Clients
         public Uri? BaseUrl { get; set; }
         /* POC */
         public string? GetSubscriberById { get; set; }
+        public string? CreateSubscriber { get; set; }
         /* POC */
 
         /* OAUTH */

@@ -10,6 +10,7 @@ namespace POC.API.IntegrationTests.Http
     public class OauthParamValue
     {
         public const string OauthParam = "OauthParam";
+
         [JsonPropertyName("client_id")]
         public string? ClientId { get; set; }
 
